@@ -1,0 +1,46 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block content %}
+	<header id="header">
+		<a href="{% url 'home' %}" class="title">Fisimath</a>
+		<nav>
+			<ul>
+				<li><a href="{% url 'home' %}">Home</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="wrapper">
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<h1 class="major">Formulário</h1>
+					<table>
+						<tr>
+							<td>Nome da fórmula</td>
+							<td>Fórmula</td>
+							<td>Uso</td>
+						</tr>
+						{% for area in areas_esp %}
+						<tr>
+							<td>{{area.nome_formula}}</td>
+							<td>{{area.formula}}</td>
+							<td>{{area.casos_uso}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+
+				</div>
+			</section>
+	
+	</div>
+
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+{% endblock content %}

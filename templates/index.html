@@ -1,0 +1,70 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="#intro">Bem-vindos</a></li>
+					<li><a href="#one">Áreas da física</a></li>
+					<li><a href="#two">O que nós fazemos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+	<div id="wrapper">
+		<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h1>Fisimath</h1>
+				<p>Bem-vindos ao fisimath, o melhor site para se aprender física em todo o Brasil.
+				<br />
+				<ul class="actions">
+					<li><a href="#one" class="button scrolly">Começe a estudar</a></li>
+				</ul>
+			</div>
+		</section>
+		<section id="one" class="wrapper style2 spotlights">
+		{% for area in areas %}
+			<section>
+				<div class="content">
+					<div class="inner">
+						<h2>{{area.name}}</h2>
+						<p>{{area.description}}</p>
+						<ul class="actions">
+							<li><a href="{{ area.get_absolute_url }}" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		{% endfor %}
+		<section id="two" class="wrapper style3 fade-up">
+			<div class="inner">
+				<h2>O que nós fazemos</h2>
+				<p>Seria muito facil simplesmente oferecer um formulário bonito para o consulta, mas até onde isso seria realmente útil?</p>
+				<div class="features">
+					<section>
+						<span class="icon solid major fa-square-root-alt"></span>
+						<h3>Ensinamos a fazer cálculo</h3>
+						<p>Do que adiantaria um formulário, se não souber como aplicar? Pensando nisso, aqui nós vamos ensinar como utilizar esse formulário.</p>
+					</section>
+					<section>
+						<span class="icon solid major fa-calculator"></span>
+						<h3>Ajudamos a economizar tempo</h3>
+						<p>Mas nós também sabemos que fazer todos os calculos a mão pode ser muito chato e tomar muito tempo, então vamos disponibilizar também uma ferramenta para calcular cada uma das fórmulas.</p>
+					</section>
+				</div>
+				<ul class="actions">
+					<li><a href="generic.html" class="button">Learn more</a></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+{% endblock content %}
